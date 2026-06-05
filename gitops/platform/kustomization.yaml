@@ -1,5 +1,5 @@
 resources:
-  - gateway-api/application.yaml
+  - gateway-api/kustomization.yaml
   - envoy-gateway/application.yaml
   - cert-manager/application.yaml
   - external-dns/application.yaml
