@@ -29,8 +29,14 @@ spec:
           name: external-dns
           annotations:
             iam.gke.io/gcp-service-account: externaldns@worlddatetime-stage.iam.gserviceaccount.com
+            
         sources: 
-          - gateway
+          - gateway-httproute
+          - gateway-grpcroute
+          - gateway-tlsroute 
+          - gateway-tcproute
+          - gateway-udproute 
+
         domainFilters: 
           - challan.pro
   
