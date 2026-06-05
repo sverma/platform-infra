@@ -23,3 +23,7 @@ spec:
         policy: sync
 
         txtOwnerId: stage-cluster
+  
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: external-dns
