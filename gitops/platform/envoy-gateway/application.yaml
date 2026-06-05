@@ -13,11 +13,11 @@ spec:
 
   source:
 
-    repoURL: oci://docker.io/envoyproxy/gateway-helm
+    repoURL: oci://docker.io/envoyproxy
 
     chart: gateway-helm
 
-    targetRevision: v1.8.0
+    targetRevision: v1.5.9
 
     helm:
       values: |
@@ -39,3 +39,4 @@ spec:
 
     syncOptions:
     - CreateNamespace=true
+    - ServerSideApply=true
