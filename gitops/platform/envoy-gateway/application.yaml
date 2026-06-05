@@ -13,7 +13,7 @@ spec:
 
   source:
 
-    repoURL: oci://docker.io/envoyproxy
+    repoURL: oci://docker.io/envoyproxy/gateway-helm
 
     chart: gateway-helm
 
