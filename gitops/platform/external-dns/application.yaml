@@ -31,6 +31,8 @@ spec:
             iam.gke.io/gcp-service-account: externaldns@worlddatetime-stage.iam.gserviceaccount.com
         sources: 
           - gateway
+        domainFilters: 
+          - challan.pro
   
   destination:
     server: https://kubernetes.default.svc
