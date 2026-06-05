@@ -1,0 +1,6 @@
+# Local .terraform path
+.terraform/
+
+# It is also recommended to ignore local state files
+*.tfstate
+*.tfstate.*

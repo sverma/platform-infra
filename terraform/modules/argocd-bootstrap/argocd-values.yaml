@@ -1,0 +1,27 @@
+server:
+  service:
+    type: ClusterIP
+  ingress: 
+    enabled: false 
+
+configs:
+  params:
+    server.insecure: true
+  cm: 
+    url: https://argocd.challan.pro
+    dex.config: |
+      connectors:
+      - type: github
+        id: github
+        name: GitHub
+        config:
+          clientID: Iv23li6Eo1RMBzYzcRjc
+          clientSecret: f1f34dca2ce48279bf31b40db2cd66f7cca56cdf
+          #redirectURI: https://argocd.challan.pro/api/dex/callback
+          orgs:
+            - name: sverma
+  rbac:
+    policy.csv: |
+      g, sverma:platform-admins, role:admin
+      g, sverma:developers, role:readonly
+              
