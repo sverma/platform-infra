@@ -24,6 +24,11 @@ spec:
         policy: sync
 
         txtOwnerId: stage-cluster
+        serviceAccount:
+          create: true
+          name: external-dns
+          annotations:
+            iam.gke.io/gcp-service-account: externaldns@worlddatetime-stage.iam.gserviceaccount.com
   
   destination:
     server: https://kubernetes.default.svc

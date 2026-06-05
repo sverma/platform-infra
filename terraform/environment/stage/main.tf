@@ -57,3 +57,8 @@ module "cloud_dns" {
 module "bootstrap" {
     source = "../../modules/argocd-bootstrap"
 }
+
+module "iam" {
+    source = "../../modules/iam"
+    project_id = var.project_id
+}
