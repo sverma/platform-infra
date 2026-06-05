@@ -17,7 +17,7 @@ spec:
 
     chart: gateway-helm
 
-    targetRevision: v1.5.9
+    targetRevision: v1.8.0
 
     helm:
       values: |
