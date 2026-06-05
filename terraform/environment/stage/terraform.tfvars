@@ -1,0 +1,10 @@
+project_id = "worlddatetime-stage" 
+region = "asia-south1" 
+subnet_cidr = "10.10.0.0/20" 
+pods_cidr = "10.11.0.0/16" 
+services_cidr = "10.12.0.0/20"
+cluster_name = "stage-cluster"
+name = "stage"
+primary_pool_node_count = 2
+node_disk_size = 20
+domain_name = "challan.pro" 

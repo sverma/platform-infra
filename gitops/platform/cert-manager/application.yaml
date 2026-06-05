@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: cert-manager
+  namespace: argocd
+
+spec:
+
+  source:
+
+    repoURL: https://charts.jetstack.io
+
+    chart: cert-manager
+
+    targetRevision: v1.18.2
+
+    helm:
+      values: |
+
+        crds:
+          enabled: true

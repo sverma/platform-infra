@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: external-dns
+  namespace: argocd
+
+spec:
+
+  source:
+
+    repoURL: https://kubernetes-sigs.github.io/external-dns
+
+    chart: external-dns
+
+    targetRevision: 1.15.0
+
+    helm:
+      values: |
+
+        provider: google
+
+        policy: sync
+
+        txtOwnerId: stage-cluster

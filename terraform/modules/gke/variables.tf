@@ -1,0 +1,10 @@
+variable "cluster_name" {}
+variable "region" {}
+variable "network" {}
+variable "subnetwork" {}
+variable "subnet_cidr" {} 
+variable "pods_cidr" {} 
+variable "services_cidr" {}
+variable "name" {}
+variable "primary_pool_node_count" {}
+variable "node_disk_size" {}
