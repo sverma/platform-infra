@@ -1,5 +1,4 @@
 resources:
-  - gateway-api
   - envoy-gateway
   - cert-manager
   - external-dns
