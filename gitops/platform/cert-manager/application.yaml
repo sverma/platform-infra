@@ -22,6 +22,12 @@ spec:
 
         crds:
           enabled: true
+        serviceAccount:
+          create: true
+          name: cert-manager
+          annotations:
+            iam.gke.io/gcp-service-account: cert-manager@worlddatetime-stage.iam.gserviceaccount.com
+            
   destination:
     server: https://kubernetes.default.svc
     namespace: cert-manager

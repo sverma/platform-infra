@@ -4,6 +4,8 @@ kind: Gateway
 metadata:
   name: public-gateway
   namespace: envoy-gateway-system
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: argocd.challan.pro
 
 spec:
 
@@ -18,11 +20,18 @@ spec:
 
   listeners:
 
-  - name: http
+  - name: https
 
-    protocol: HTTP
+    protocol: HTTPS
 
-    port: 80
+    port: 443
+
+    hostname: argocd.example.com
+    tls: 
+      mode: Terminate
+      certificateRefs: 
+      - kind: Secret
+        name: argocd-tls
 
     allowedRoutes:
       namespaces:
