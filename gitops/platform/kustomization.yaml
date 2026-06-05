@@ -1,0 +1,6 @@
+resources:
+  - gateway-api/application.yaml
+  - envoy-gateway/application.yaml
+  - cert-manager/application.yaml
+  - external-dns/application.yaml
+
