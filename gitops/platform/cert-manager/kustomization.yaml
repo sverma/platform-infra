@@ -1,2 +1,4 @@
 resources:
 - application.yaml
+- clusterissuer.yaml
+- argocd-certificate.yaml
