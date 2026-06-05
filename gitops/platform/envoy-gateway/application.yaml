@@ -4,6 +4,8 @@ kind: Application
 metadata:
   name: envoy-gateway
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 
 spec:
 
@@ -11,7 +13,7 @@ spec:
 
   source:
 
-    repoURL: https://charts.gateway.envoyproxy.io
+    repoURL: oci://docker.io/envoyproxy
 
     chart: gateway-helm
 

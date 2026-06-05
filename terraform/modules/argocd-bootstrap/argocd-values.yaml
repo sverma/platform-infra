@@ -8,6 +8,7 @@ configs:
   params:
     server.insecure: true
   cm: 
+    helm.enableOCI: true
     url: https://argocd.challan.pro
     dex.config: |
       connectors:
