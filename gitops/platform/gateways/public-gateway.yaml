@@ -10,7 +10,7 @@ spec:
   gatewayClassName: envoy
 
   infrastructure:
-    parentRef:
+    parametersRef:
       group: gateway.envoyproxy.io
       kind: EnvoyProxy
       name: gateway-proxy-config
