@@ -2,4 +2,5 @@ resources:
   - envoy-gateway
   - cert-manager
   - external-dns
+  - gateways
 

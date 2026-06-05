@@ -1,0 +1,5 @@
+resources:
+  - gatewayclass.yaml
+  - public-gateway.yaml
+  - argocd-httproute.yaml
+
