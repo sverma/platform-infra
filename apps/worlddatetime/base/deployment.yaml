@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worlddatetime
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: worlddatetime
+
+  template:
+    metadata:
+      labels:
+        app: worlddatetime
+
+    spec:
+      serviceAccountName: worlddatetime
+
+      securityContext:
+        runAsNonRoot: true
+        fsGroup: 2000
+
+      containers:
+        - name: worlddatetime
+
+          image: worlddatetime:latest
+
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 8080
+
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+
+          readinessProbe:
+            httpGet:
+              path: /time
+              port: 8080
+
+          livenessProbe:
+            httpGet:
+              path: /time
+              port: 8080
+
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+
+            limits:
+              cpu: 500m
+              memory: 256Mi

@@ -46,10 +46,6 @@ module "cloud_dns" {
   zone_name = "platform-zone"
 }
 
-# module "cert_manager" {
-#     source = "../../modules/cert-manager" 
-# }
-
 # module "external_dns" {
 #     source = "../../modules/external-dns"
 # }
