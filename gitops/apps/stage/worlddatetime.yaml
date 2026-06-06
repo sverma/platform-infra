@@ -2,23 +2,25 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 
 metadata:
-  name: root-app
+  name: worlddatetime-stage
   namespace: argocd
 
 spec:
-
-  project: default
+  project: apps
 
   source:
     repoURL: https://github.com/sverma/platform-infra.git
     targetRevision: main
-    path: gitops
+    path: apps/worlddatetime/overlays/stage
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: worlddatetime
 
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true
