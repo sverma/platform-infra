@@ -17,4 +17,5 @@ spec:
     kind: ClusterIssuer
 
   dnsNames:
-  - argocd.challan.pro
+  - "*.challan.pro"
+  - challan.pro
