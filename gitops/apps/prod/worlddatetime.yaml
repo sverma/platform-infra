@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: worlddatetime-prod
+  namespace: argocd
+
+spec:
+  project: apps-prod
+
+  source:
+    repoURL: https://github.com/sverma/platform-infra.git
+    targetRevision: main
+    path: apps/worlddatetime/overlays/prod
+
+  destination:
+    server: https://34.93.253.26
+    namespace: worlddatetime
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true

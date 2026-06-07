@@ -1,0 +1,10 @@
+project_id = "worlddatetime-prod" 
+region = "asia-south1" 
+subnet_cidr = "10.20.0.0/20" 
+pods_cidr = "10.21.0.0/16" 
+services_cidr = "10.22.0.0/20"
+cluster_name = "prod-cluster"
+name = "prod"
+primary_pool_node_count = 1
+node_disk_size = 20
+domain_name = "challan.pro" 
