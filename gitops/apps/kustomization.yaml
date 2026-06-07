@@ -3,5 +3,7 @@ kind: Kustomization
 
 resources:
   - stage/worlddatetime.yaml
+  - prod/worlddatetime.yaml
   - projects/platform-project.yaml
-  
+  - projects/platform-project-prod.yaml
+

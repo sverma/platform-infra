@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: envoy-gateway
+  namespace: argocd
+
+spec:
+  destination:
+    server: https://34.93.253.26 
+    namespace: envoy-gateway-system

@@ -8,6 +8,7 @@ metadata:
 spec:
 
   project: default
+
   source:
 
     repoURL: https://kubernetes-sigs.github.io/external-dns
@@ -23,31 +24,24 @@ spec:
 
         policy: sync
 
-        txtOwnerId: stage-cluster
         serviceAccount:
           create: true
           name: external-dns
-          annotations:
-            iam.gke.io/gcp-service-account: externaldns@worlddatetime-stage.iam.gserviceaccount.com
-            
-        sources: 
+
+        sources:
           - gateway-httproute
           - gateway-grpcroute
-          - gateway-tlsroute 
+          - gateway-tlsroute
           - gateway-tcproute
-          - gateway-udproute 
+          - gateway-udproute
 
-        domainFilters: 
+        domainFilters:
           - challan.pro
-  
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: external-dns
-  
+
   syncPolicy:
     automated:
       selfHeal: true
       prune: true
 
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true
