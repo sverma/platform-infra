@@ -15,7 +15,7 @@ spec:
     path: gitops/platform/overlays/prod
 
   destination:
-    server: https://34.93.253.26
+    server: https://kubernetes.default.svc
     namespace: argocd
 
   syncPolicy:
