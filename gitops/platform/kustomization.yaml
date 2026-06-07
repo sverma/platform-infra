@@ -3,5 +3,5 @@ kind: Kustomization
 
 
 resources:
-  - ../overlays/stage
-  - ../overlays/prod
+  - overlays/stage
+  - overlays/prod
