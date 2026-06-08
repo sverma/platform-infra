@@ -24,7 +24,7 @@ spec:
 
         policy: sync
 
-        txtOwnerId: prod-cluster
+        txtOwnerId: stage-cluster
 
         serviceAccount:
           create: true
