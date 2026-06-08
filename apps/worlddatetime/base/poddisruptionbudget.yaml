@@ -3,7 +3,7 @@ kind: PodDisruptionBudget
 metadata:
   name: worlddatetime
 spec:
-  minAvailable: 1
+  minAvailable: 0
 
   selector:
     matchLabels:
