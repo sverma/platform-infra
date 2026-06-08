@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: certificates-stage
+  namespace: argocd
+
+spec:
+
+  project: default
+
+  source:
+    repoURL: https://github.com/sverma/platform-infra.git
+    targetRevision: main
+    path: gitops/platform/base/certificates
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: envoy-gateway-system
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
