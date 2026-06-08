@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 
 metadata:
-  name: cert-manager
+  name: gateways
   namespace: argocd
 
 spec:
@@ -12,10 +12,10 @@ spec:
   source:
     repoURL: https://github.com/sverma/platform-infra.git
     targetRevision: main
-    path: gitops/platform/overlays/prod/cert-manager
+    path: gitops/platform/overlays/stage/gateways
 
   destination:
-    server: https://34.93.253.26
+    server: https://kubernetes.default.svc
     namespace: envoy-gateway-system
 
   syncPolicy:

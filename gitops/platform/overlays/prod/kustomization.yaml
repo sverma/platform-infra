@@ -3,9 +3,10 @@ kind: Kustomization
 
 
 resources:
-  - ../../base
   - cert-manager.yaml
   - gateways.yaml 
+
+nameSuffix: -prod
 
 patches:
   - path: envoy-gateway-patch.yaml
