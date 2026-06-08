@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 
 metadata:
-  name: external-dns
+  name: external-dns-prod
   namespace: argocd
 
 spec:
@@ -16,7 +16,7 @@ spec:
     chart: external-dns
 
     targetRevision: 1.15.0
-
+    
     helm:
       values: |
 
@@ -24,9 +24,15 @@ spec:
 
         policy: sync
 
+        txtOwnerId: prod-cluster
+
         serviceAccount:
           create: true
           name: external-dns
+
+          annotations:
+            iam.gke.io/gcp-service-account: |
+              externaldns@worlddatetime-stage.iam.gserviceaccount.com
 
         sources:
           - gateway-httproute
@@ -38,10 +44,6 @@ spec:
         domainFilters:
           - challan.pro
 
-  syncPolicy:
-    automated:
-      selfHeal: true
-      prune: true
-
-    syncOptions:
-      - CreateNamespace=true
+  destination:
+    server: https://34.93.253.26 
+    namespace: external-dns

@@ -3,17 +3,19 @@ kind: Kustomization
 
 
 resources:
-  - ../../base/envoy-gateway
-  - ../../base/external-dns
-  - cert-manager.yaml
-  - gateways.yaml 
 
-patches:
-  - path: envoy-gateway-patch.yaml
-    target: 
-      kind: Application
-      name: envoy-gateway
-  - path: external-dns-patch.yaml
-    target: 
-      kind: Application
-      name: external-dns
+  - cert-manager.yaml
+  - gateways.yaml
+  - envoy-gateway.yaml
+  - external-dns.yaml
+  
+
+# patches:
+#   - path: envoy-gateway-patch.yaml
+#     target: 
+#       kind: Application
+#       name: envoy-gateway
+#   - path: external-dns-patch.yaml
+#     target: 
+#       kind: Application
+#       name: external-dns
