@@ -8,7 +8,7 @@ metadata:
 
 spec:
 
-  gatewayClassName: envoy
+  gatewayClassName: public-gateway
 
   infrastructure:
     parametersRef:
