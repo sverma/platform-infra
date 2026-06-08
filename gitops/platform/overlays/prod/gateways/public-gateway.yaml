@@ -35,4 +35,21 @@ spec:
     allowedRoutes:
       namespaces:
         from: All
+  
+  - name: https
+
+    protocol: HTTPS
+
+    port: 443
+
+    hostname: "challan.pro"
+    tls: 
+      mode: Terminate
+      certificateRefs: 
+      - kind: Secret
+        name: argocd-tls
+
+    allowedRoutes:
+      namespaces:
+        from: All
 
