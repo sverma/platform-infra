@@ -31,8 +31,7 @@ spec:
           name: external-dns
 
           annotations:
-            iam.gke.io/gcp-service-account: |
-              externaldns@worlddatetime-stage.iam.gserviceaccount.com
+            iam.gke.io/gcp-service-account: externaldns@worlddatetime-stage.iam.gserviceaccount.com
 
         sources:
           - gateway-httproute
