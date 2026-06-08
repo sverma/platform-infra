@@ -2,13 +2,21 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 
 metadata:
-  name: external-dns-prod
+  name: external-dns-stage
   namespace: argocd
 
 spec:
 
+  project: default
+
   source:
 
+    repoURL: https://kubernetes-sigs.github.io/external-dns
+
+    chart: external-dns
+
+    targetRevision: 1.15.0
+    
     helm:
       values: |
 
@@ -37,5 +45,5 @@ spec:
           - challan.pro
 
   destination:
-    server: https://34.93.253.26 
+    server: https://kubernetes.default.svc
     namespace: external-dns
