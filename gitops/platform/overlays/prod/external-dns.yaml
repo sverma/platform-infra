@@ -22,8 +22,8 @@ spec:
 
         provider: google
 
-        google: 
-          project: worlddatetime-stage
+        extraArgs: 
+          - --google-project=worlddatetime-stage
 
         policy: sync
 
