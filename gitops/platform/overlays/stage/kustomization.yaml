@@ -3,6 +3,8 @@ kind: Kustomization
 
 
 resources:
+  - ../../base/envoy-gateway
+  - ../../base/external-dns
   - cert-manager.yaml
   - gateways.yaml
 
