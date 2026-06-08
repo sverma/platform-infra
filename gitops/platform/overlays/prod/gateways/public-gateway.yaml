@@ -36,7 +36,7 @@ spec:
       namespaces:
         from: All
   
-  - name: https
+  - name: https-root
 
     protocol: HTTPS
 
