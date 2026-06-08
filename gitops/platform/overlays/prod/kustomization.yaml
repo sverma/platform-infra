@@ -10,4 +10,10 @@ nameSuffix: -prod
 
 patches:
   - path: envoy-gateway-patch.yaml
+    target: 
+      kind: Application
+      name: envoy-gateway
   - path: external-dns-patch.yaml
+    target: 
+      kind: Application
+      name: external-dns
