@@ -8,8 +8,6 @@ resources:
   - cert-manager.yaml
   - gateways.yaml
 
-nameSuffix: -stage
-
 patches:
   - path: envoy-gateway-patch.yaml
     target: 
