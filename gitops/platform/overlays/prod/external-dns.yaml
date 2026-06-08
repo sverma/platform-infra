@@ -22,6 +22,9 @@ spec:
 
         provider: google
 
+        google: 
+          project: worlddatetime-stage
+
         policy: sync
 
         txtOwnerId: prod-cluster
