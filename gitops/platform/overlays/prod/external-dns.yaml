@@ -46,3 +46,10 @@ spec:
   destination:
     server: https://34.93.253.26 
     namespace: external-dns
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true # Enables automated namespace creation
+
