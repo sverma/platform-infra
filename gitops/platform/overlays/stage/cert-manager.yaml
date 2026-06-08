@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 
 metadata:
-  name: cert-manager-stage
+  name: cert-manager
   namespace: argocd
 
 spec:
@@ -10,15 +10,32 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/sverma/platform-infra.git
-    targetRevision: main
-    path: gitops/platform/overlays/stage/cert-manager
 
+    repoURL: https://charts.jetstack.io
+
+    chart: cert-manager
+
+    targetRevision: v1.18.2
+
+    helm:
+      values: |
+
+        crds:
+          enabled: true
+        serviceAccount:
+          create: true
+          name: cert-manager
+          annotations:
+            iam.gke.io/gcp-service-account: cert-manager@worlddatetime-stage.iam.gserviceaccount.com
+            
   destination:
     server: https://kubernetes.default.svc
-    namespace: envoy-gateway-system
-
+    namespace: cert-manager
+  
   syncPolicy:
     automated:
-      prune: true
       selfHeal: true
+      prune: true
+
+    syncOptions:
+    - CreateNamespace=true
