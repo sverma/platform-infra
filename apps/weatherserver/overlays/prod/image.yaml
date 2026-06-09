@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
         - name: weatherserver
-          image: asia-south1-docker.pkg.dev/worlddatetime-stage/weatherserver/weatherserver:
+          image: asia-south1-docker.pkg.dev/worlddatetime-stage/weatherserver/weatherserver:b1dd5ed
