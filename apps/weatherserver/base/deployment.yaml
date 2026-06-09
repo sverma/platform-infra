@@ -29,7 +29,7 @@ spec:
           imagePullPolicy: Always
 
           ports:
-            - containerPort: 8080
+            - containerPort: 8081
 
           securityContext:
             allowPrivilegeEscalation: false
@@ -41,12 +41,12 @@ spec:
           readinessProbe:
             httpGet:
               path: /ready
-              port: 8080
+              port: 8081
 
           livenessProbe:
             httpGet:
               path: /health
-              port: 8080
+              port: 8081
 
           resources:
             requests:
