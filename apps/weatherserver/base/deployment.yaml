@@ -1,34 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: worlddatetime
+  name: weatherserver
 spec:
   replicas: 2
 
   selector:
     matchLabels:
-      app: worlddatetime
+      app: weatherserver
 
   template:
     metadata:
       labels:
-        app: worlddatetime
+        app: weatherserver
 
     spec:
-      serviceAccountName: worlddatetime
+      serviceAccountName: weatherserver
 
       securityContext:
         runAsNonRoot: true
         fsGroup: 2000
 
       containers:
-        - name: worlddatetime
+        - name: weatherserver
 
-          image: worlddatetime:latest
-          
-          env: 
-          - name: WEATHER_SERVICE_URL
-          - value: http://weatherserver
+          image: weatherserver:latest
 
           imagePullPolicy: Always
 
@@ -44,12 +40,12 @@ spec:
 
           readinessProbe:
             httpGet:
-              path: /time
+              path: /ready
               port: 8080
 
           livenessProbe:
             httpGet:
-              path: /time
+              path: /health
               port: 8080
 
           resources:
