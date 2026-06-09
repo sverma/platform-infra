@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
         - name: worlddatetime
-          image: asia-south1-docker.pkg.dev/worlddatetime-stage/worlddatetime/worlddatetime:dda396a
+          image: asia-south1-docker.pkg.dev/worlddatetime-stage/worlddatetime/worlddatetime:e3e6eb4
