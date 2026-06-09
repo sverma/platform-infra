@@ -1,0 +1,22 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: weatherserver
+spec:
+  parentRefs:
+    - name: public-gateway
+      namespace: envoy-gateway-system
+
+  hostnames:
+    - stage.challan.pro
+
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /weather
+
+      backendRefs:
+        - name: weatherserver
+          port: 80
+
