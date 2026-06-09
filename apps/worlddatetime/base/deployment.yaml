@@ -28,7 +28,7 @@ spec:
           
           env: 
           - name: WEATHER_SERVICE_URL
-          - value: http://weatherserver
+            value: http://weatherserver
 
           imagePullPolicy: Always
 
