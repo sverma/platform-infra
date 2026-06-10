@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+
+metadata:
+  name: worlddatetime
+
+spec:
+
+  selector:
+    matchLabels:
+      app: worlddatetime
+
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s
