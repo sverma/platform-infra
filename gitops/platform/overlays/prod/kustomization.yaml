@@ -9,6 +9,8 @@ resources:
   - envoy-gateway.yaml
   - external-dns.yaml
   - certificates.yaml
+  - kube-prometheus-stack.yaml
+  - observability-route.yaml
   
 
 # patches:
