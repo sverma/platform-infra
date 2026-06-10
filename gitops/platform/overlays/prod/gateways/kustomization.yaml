@@ -2,4 +2,4 @@ resources:
   - gatewayclass.yaml
   - public-gateway.yaml
   - envoyproxy.yaml
-
+  - observability-route.yaml
