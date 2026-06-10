@@ -1,0 +1,26 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+
+metadata:
+  name: grafana
+  namespace: monitoring
+
+spec:
+
+  parentRefs:
+    - name: public-gateway
+      namespace: envoy-gateway-system
+
+  hostnames:
+    - www.challan.pro
+    - challan.pro
+
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /grafana
+
+      backendRefs:
+        - name: observability-prod-grafana
+          port: 80
