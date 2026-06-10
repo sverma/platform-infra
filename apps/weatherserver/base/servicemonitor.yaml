@@ -3,12 +3,17 @@ kind: ServiceMonitor
 
 metadata:
   name: weatherserver
+  namespace: weatherserver
 
   labels: 
     release: observability-stage
 
 spec:
 
+  namespaceSelector:
+    matchNames: 
+      - weatherserver
+      
   selector:
     matchLabels:
       app: weatherserver
