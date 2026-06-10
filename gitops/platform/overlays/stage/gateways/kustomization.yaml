@@ -3,4 +3,5 @@ resources:
   - public-gateway.yaml
   - argocd-httproute.yaml
   - envoyproxy.yaml
+  - observability-route.yaml
 
