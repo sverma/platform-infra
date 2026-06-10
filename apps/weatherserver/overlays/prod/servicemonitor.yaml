@@ -3,6 +3,7 @@ kind: ServiceMonitor
 
 metadata:
   name: weatherserver
+  namespace: weatherserver
 
   labels: 
     release: observability-prod
