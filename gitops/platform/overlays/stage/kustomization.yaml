@@ -11,6 +11,7 @@ resources:
   - certificates.yaml
   - kube-prometheus-stack.yaml
   - observability-route.yaml
+  - observability-crds.yaml
 
 
 # patches:
