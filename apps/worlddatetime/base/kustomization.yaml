@@ -9,3 +9,4 @@ resources:
   - networkpolicy.yaml
   - poddisruptionbudget.yaml
   - serviceaccount.yaml
+  - servicemonitor.yaml
