@@ -11,4 +11,5 @@ patches:
   - path: image.yaml
   - path: gateway-host.yaml
   - path: resource-limits.yaml
+  - path: servicemonitor.yaml
 

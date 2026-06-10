@@ -4,6 +4,9 @@ kind: ServiceMonitor
 metadata:
   name: worlddatetime
 
+  labels: 
+    release: observability-stage
+
 spec:
 
   selector:

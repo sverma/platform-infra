@@ -4,6 +4,9 @@ kind: ServiceMonitor
 metadata:
   name: weatherserver
 
+  labels: 
+    release: observability-stage
+
 spec:
 
   selector:
