@@ -3,6 +3,7 @@ kind: ServiceMonitor
 
 metadata:
   name: worlddatetime
+  namespace: worlddatetime
 
   labels: 
     release: observability-stage
