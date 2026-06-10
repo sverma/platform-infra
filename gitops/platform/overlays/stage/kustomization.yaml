@@ -9,6 +9,7 @@ resources:
   - envoy-gateway.yaml
   - external-dns.yaml
   - certificates.yaml
+  - observability.yaml
 
 
 # patches:
