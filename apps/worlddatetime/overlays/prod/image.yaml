@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -6,5 +7,5 @@ spec:
   template:
     spec:
       containers:
-        - name: worlddatetime
-          image: asia-south1-docker.pkg.dev/worlddatetime-stage/worlddatetime/worlddatetime:v0.0.0-21aa836@sha256:6e2d2838589869445335af4f1c1b9a7784187e026ca61639dabecd745fb4bcd4
+      - name: worlddatetime
+        image: asia-south1-docker.pkg.dev/worlddatetime-stage/worlddatetime/worlddatetime:v0.0.0-b77161e@sha256:17bd66ab22b6c5f9fbb4bfabcdf35fc43d97694540df5fb9057f9fbfb5868328
