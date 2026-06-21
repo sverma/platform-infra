@@ -8,4 +8,4 @@ spec:
     spec:
       containers:
       - name: worlddatetime
-        image: ":v0.0.0-5e6bbae@sha256:a9f119378c45bbb148af53a277f867e540ee00caaa4d9bc1fb3c4f7e5dff2971"
+        image: ":v0.0.0-a6a781d@sha256:f3857a8617e9f9a0da89ed53206fddc692ab05341d701c081b245a7b0f12a012"
