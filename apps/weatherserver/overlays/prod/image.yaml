@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -6,5 +7,5 @@ spec:
   template:
     spec:
       containers:
-        - name: weatherserver
-          image: asia-south1-docker.pkg.dev/worlddatetime-stage/weatherserver/weatherserver:f8059fd
+      - name: weatherserver
+        image: asia-south1-docker.pkg.dev/worlddatetime-stage/weatherserver/weatherserver:v0.0.0-e378dde@sha256:e0a80941d6c148e27fc00ec2fab36be69ca860b62e9e17e939e4d4d1ed88db26
