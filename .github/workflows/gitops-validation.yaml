@@ -1,0 +1,46 @@
+name: gitops-validation
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "apps/**"
+      - "gitops/**"
+      - ".github/workflows/gitops-validation.yaml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gitops-validation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: validate-gitops
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Validate rendered GitOps manifests
+        id: gitops-validation
+        uses: sverma/platform-workflows/.github/actions/gitops-validate@v1.2.0
+        with:
+          overlays: |
+            apps/worlddatetime/overlays/stage
+            apps/worlddatetime/overlays/prod
+            apps/weatherserver/overlays/stage
+            apps/weatherserver/overlays/prod
+            gitops/apps/stage
+            gitops/apps/prod
+            gitops/platform/overlays/stage
+            gitops/platform/overlays/prod
+
+      - name: Upload rendered manifests
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: rendered-gitops-manifests
+          path: ${{ steps.gitops-validation.outputs.rendered-directory }}
+          if-no-files-found: warn
