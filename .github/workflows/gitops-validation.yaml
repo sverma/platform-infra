@@ -25,7 +25,7 @@ jobs:
 
       - name: Validate rendered GitOps manifests
         id: gitops-validation
-        uses: sverma/platform-workflows/.github/actions/gitops-validate@codex/gitops-validation-pass1
+        uses: sverma/platform-workflows/.github/actions/gitops-validate@v1.2.0
         with:
           overlays: |
             apps/worlddatetime/overlays/stage
