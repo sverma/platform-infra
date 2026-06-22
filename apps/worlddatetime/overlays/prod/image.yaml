@@ -8,4 +8,4 @@ spec:
     spec:
       containers:
       - name: worlddatetime
-        image: asia-south1-docker.pkg.dev/worlddatetime-stage/worlddatetime/worlddatetime:v0.0.0-71db79a@sha256:4e506d3a7f14371e993ee52458b5c9f6f2cb39cf85fed8a2ac7a9c461969d5c2
+        image: asia-south1-docker.pkg.dev/worlddatetime-stage/worlddatetime/worlddatetime:v0.0.0-18ce858@sha256:edcd9064ddc876dd4847c9aa80a3ed894bde8a517baea5824da5ddfeeb6e6ff1
